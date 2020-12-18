@@ -1,23 +1,36 @@
 # task_timer
 
 #### 介绍
-小度音箱 任务计时器技能
+小度音箱 任务计时器技能，计算任务所花时间，
+
+
+
 
 #### 软件架构
-软件架构说明
-
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
+##### 基本算法
+任务时间=结束任务时间-开始任务时间
+##### 具体实现
+- 开始任务时，把当前时间记录到持久存储中，在结束任务时，用结束任务的时间减去开始任务时间得到任务所花时间
+- 持久存储的时间设置为**5**小时，所以，**该技能最大支持5小时内的计时**
+###### 持久存储操作
+由于Nodejs sdk没有storage接口，需要自行处理
+- 持久存储
+先把要持久存储的数据存入本地变量，在得到响应的json后，解析json，合并context的storage属性
+- 持久存储获取
+  持久存储的数据在请求的context的PersistentStorages属性中，**自定义技能文档中没有描述，需要注意后续接口变化**
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+##### 启动技能
+打开任务计时器 开始对话
+##### 开始
+- 开始
+- 开始任务
+##### 结束
+
+- 停止
+- 结束任务
+- 停止任务
 
 #### 参与贡献
 
@@ -27,11 +40,7 @@
 4.  新建 Pull Request
 
 
-#### 特技
+#### 参考
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+- [自定义技能开发文档](https://dueros.baidu.com/didp/doc/index)https://dueros.baidu.com/didp/doc/index
+- [Nodejs SDK使用说明](https://github.com/dueros/bot-sdk-node.js)  https://github.com/dueros/bot-sdk-node.js
