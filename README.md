@@ -15,8 +15,10 @@
 ###### 持久存储操作
 由于Nodejs sdk没有storage接口，需要自行处理
 - 持久存储
-先把要持久存储的数据存入本地变量，在得到响应的json后，解析json，合并context的storage属性
+  
+    先把要持久存储的数据存入本地变量，在得到响应的json后，解析json，合并context的storage属性
 - 持久存储获取
+  
   持久存储的数据在请求的context的PersistentStorages属性中，**自定义技能文档中没有描述，需要注意后续接口变化**
 
 #### 使用说明
